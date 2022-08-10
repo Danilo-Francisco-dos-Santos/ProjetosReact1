@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
-
+import Home from './pages/Home';
+import Config from './pages/config';
 
 
 function Routers() {
@@ -12,8 +12,7 @@ function Routers() {
             <Route exact path="/" element={<Home />}>
             </Route>
 
-            <Route exact path="/config">
-                Página 2
+            <Route exact path="/config" element={<Config />}>
             </Route>
         </Routes>
 

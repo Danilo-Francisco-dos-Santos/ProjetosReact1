@@ -4,7 +4,10 @@ export const AreaHeader = styled.div`
     // Tamanho do Header
     height: 60px;
     // Cor do fundo
-    background-color: #791E94;
+    background-image: linear-gradient(to right, #fe5d26, #370d44);
+
+    /* background-color: #791E94; */
+
     // Cor do texto
     color: #fff;
 
@@ -16,6 +19,7 @@ export const AreaHeader = styled.div`
         
         /* Alinha os itens header no centro na horizontal */
         align-items: center;
+
     }
 
     .logo{
@@ -30,6 +34,12 @@ export const AreaHeader = styled.div`
         li{
             list-style: none;
             margin-left: 20px;
+            color: #fff;
+            
+            &:hover{
+                color: #f5bb00;
+            }
+           
         }
     }
 

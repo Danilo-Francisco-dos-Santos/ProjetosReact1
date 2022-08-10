@@ -3,6 +3,9 @@ import React from "react";
 // Puxa styled dentro pasta Header
 import { AreaHeader } from './styled';
 
+// Funciona como HREF do html porem sem atulizar a aplicação
+import { Link } from "react-router-dom";
+
 function Header() {
     return (
 
@@ -14,8 +17,16 @@ function Header() {
 
                 <nav>
                     <ul>
-                        <li>Configurações</li>
-                        <li>Sair</li>
+                        <Link to="/">
+                            <li>Início</li>
+                        </Link>
+                        <Link to="/config">
+                            <li>Configurações</li>
+                        </Link>
+
+                        <Link to="/Sair">
+                            <li>Sair</li>
+                        </Link>
                     </ul>
                 </nav>
             </div>
