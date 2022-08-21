@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const AreaLogin = styled.div`
-/* cor de fundo branca */
+export const AreaRegistro = styled.div`
+
+    /* cor de fundo branca */
     background-color: #fff;
     padding: 30px;
     max-width: 300px;
@@ -11,15 +12,12 @@ export const AreaLogin = styled.div`
     border-radius: 5px;
     box-shadow: 8px 8px 10px #ccc;
 
-    h1{
-        font-size: 24px;
+    p{
+        font-size: 13px;
+        color: #9c9c9c;
     }
 
-    div{
-        text-align: center;
-        width: 100%;
-    }
-
+    /* Estilizaão do formulario */
     .form{
         text-align: left;
 
@@ -58,5 +56,12 @@ export const AreaLogin = styled.div`
             }
         }
     }
-`;
 
+    .organize{
+        display: flex;
+        
+        a{
+            color: black;
+        }
+    }
+`;

@@ -32,3 +32,14 @@ export const BtnEntrar = styled(BtnDefatultIcons)`
     }
 
 `;
+
+export const BtnComeceAgora = styled(BtnDefatultIcons)`
+    background-color: #7d2ae8;
+    color: #fff;
+    display: inline;
+
+    &:hover{
+        background-color: #4e129c;
+    }
+
+`;

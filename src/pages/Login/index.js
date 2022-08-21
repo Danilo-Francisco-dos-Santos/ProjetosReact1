@@ -1,8 +1,10 @@
 import React from "react";
 import { AreaLogin } from './styled';
 
-// importa react routers dom
-import { BrowserRouter, Link } from 'react-router-dom';
+// Browser Router conecta o seu aplicativo ao URL do navegador
+// Link adiciona alguma navegação global igual a href
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
+import Registrar from "../Registro";
 
 //Importa Estilização diferente para botões especificos
 import { BtnDefatultIcons, BtnEntrar } from '../../components/Buttons/Styled'
@@ -15,44 +17,56 @@ function Login() {
     return (
 
         <BrowserRouter>
-            <AreaLogin>
-                <h1>Faça o login em sua conta</h1>
 
-                <BtnDefatultIcons>
-                    <FaFacebookSquare />
-                    <div>Fazer login com o Facebook</div>
-                </BtnDefatultIcons>
+            <Routes>
+                <Route exact path="/registrar" element={<Registrar />}>
+                </Route>
 
-                <BtnDefatultIcons>
-                    <FaGoogle />
-                    <div>Fazer login com o Google</div>
-                </BtnDefatultIcons>
+                {/* O conteudo a ser rederizado deve ficar dentro de element e não dentro das tags route */}
+                <Route exact path="*" element={
 
-                <p>OU</p>
+                    <AreaLogin>
+                        <h1>Faça o login em sua conta</h1>
 
-                <form>
-                    <div className="form">
-                        <label>E-mail: </label>
-                        <input type="email"></input>
-                    </div>
+                        <BtnDefatultIcons>
+                            <FaFacebookSquare />
+                            <div>Fazer login com o Facebook</div>
+                        </BtnDefatultIcons>
 
-                    <div className="form">
-                        <label>Senha: </label>
-                        <input type="password"></input>
-                    </div>
+                        <BtnDefatultIcons>
+                            <FaGoogle />
+                            <div>Fazer login com o Google</div>
+                        </BtnDefatultIcons>
 
-                    <BtnEntrar>
-                        Entrar
-                    </BtnEntrar>
-                </form>
+                        <p>OU</p>
 
-                <div className="">
-                    Não tem uma conta? 
-                    <Link to={"/Registrar"}>Registre-se</Link>
-                </div>
+                        <form>
+                            <div className="form">
+                                <label>E-mail: </label>
+                                <input type="email"></input>
+                            </div>
 
-            </AreaLogin>
+                            <div className="form">
+                                <label>Senha: </label>
+                                <input type="password"></input>
+                            </div>
+
+                            <BtnEntrar>
+                                Entrar
+                            </BtnEntrar>
+                        </form>
+
+                        {/* Link para se Registrar */}
+                        <div className="footerLogin">
+                            Não tem uma conta?
+                            <Link to="/registrar">Registre-se</Link>
+                        </div>
+
+                    </AreaLogin>
+                }></Route>
+            </Routes>
         </BrowserRouter>
+
     );
 }
 
