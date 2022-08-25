@@ -4,7 +4,7 @@ import { BtnComeceAgora } from '../../components/Buttons/Styled';
 import { Link } from "react-router-dom";
 
 // Importa o icone do React Icons Arrows
-import { IoIosArrowBack } from 'react-icons/all'
+import { IoIosArrowBack } from 'react-icons/all';
 
 function Registrar() {
     return (

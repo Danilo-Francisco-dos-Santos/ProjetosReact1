@@ -6,7 +6,7 @@ import { AreaHeader } from './styled';
 // Funciona como HREF do html porem sem atulizar a aplicação
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
     return (
 
         <AreaHeader>
@@ -20,6 +20,7 @@ function Header() {
                         <Link to="/">
                             <li>Início</li>
                         </Link>
+
                         <Link to="/config">
                             <li>Configurações</li>
                         </Link>
@@ -28,6 +29,11 @@ function Header() {
                             <li>Sair</li>
                         </Link>
                     </ul>
+
+                    <div>
+                        <img src={props.user.avatar} alt="Foto Perfil Google"/>
+                        <label>{props.user.name}</label>
+                    </div>
                 </nav>
             </div>
         </AreaHeader>

@@ -13,7 +13,20 @@ import { BtnDefatultIcons, BtnEntrar } from '../../components/Buttons/Styled'
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
-function Login() {
+import Api from '../../Api';
+
+function Login({ onReceiveGoogle }) {
+
+    const actionLoginGoogle = async () => {
+        let result = await Api.googleLogar();
+
+        if (result) {
+            onReceiveGoogle(result.user);
+        } else {
+            alert('Error');
+        }
+    }
+
     return (
 
         <BrowserRouter>
@@ -28,12 +41,12 @@ function Login() {
                     <AreaLogin>
                         <h1>Faça o login em sua conta</h1>
 
-                        <BtnDefatultIcons>
+                        <BtnDefatultIcons >
                             <FaFacebookSquare />
                             <div>Fazer login com o Facebook</div>
                         </BtnDefatultIcons>
 
-                        <BtnDefatultIcons>
+                        <BtnDefatultIcons onClick={actionLoginGoogle}>
                             <FaGoogle />
                             <div>Fazer login com o Google</div>
                         </BtnDefatultIcons>

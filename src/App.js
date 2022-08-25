@@ -15,17 +15,27 @@ function App() {
 
   const [user, setUser] = useState(null);
 
+  const actionLoginDataGoogle = async (u) => {
+    let newUser = {
+      id: u.id,
+      name: u.displayName,
+      avatar: u.photoURL
+    }
+
+    setUser(newUser);
+  }
+
   // verifica se existe um usuario já criado se for vazio exibe a tela de login
   if (user === null) {
     return (
-      <Login />
+      <Login onReceiveGoogle={actionLoginDataGoogle} />
     );
   }
 
   return (
     <BrowserRouter>
 
-      <Header />
+      <Header user={user} />
       <Routers />
       <Footer />
 
